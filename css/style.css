@@ -163,19 +163,100 @@ p {
    4. SCROLL REVEAL ANIMATIONS
    (No AOS dependency — pure CSS + JS observer)
 ───────────────────────────────────────────── */
-.reveal {
+html.js .reveal {
     opacity: 0;
     transform: translateY(32px);
     transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
-.reveal.reveal-delay {
+html.js .reveal.reveal-delay {
     transition-delay: 0.18s;
 }
 
-.reveal.visible {
+html.js .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+html.js [data-text-reveal] .text-word {
+    display: inline-block;
+    overflow-y: clip;
+    vertical-align: bottom;
+    margin-block: -0.12em;
+    padding-block: 0.12em;
+}
+
+html.js [data-text-reveal] .text-word-inner {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(125%);
+    transition: opacity 0.65s var(--ease), filter 0.8s var(--ease), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--word-delay, 0ms);
+}
+
+html.js [data-text-reveal].text-revealed .text-word-inner {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+html.js .hero-name[data-text-reveal="letters"] .text-word {
+    overflow: visible;
+}
+
+.text-letter-scatter {
+    display: inline-block;
+    transform: translate3d(0, var(--scatter-y, 0px), 0) rotate(var(--scatter-rotate, 0deg));
+    opacity: var(--scatter-opacity, 1);
+    will-change: transform, opacity;
+}
+
+html.js [data-slide] {
+    --slide-distance: 72px;
+    opacity: 0;
+    transform: translate3d(var(--slide-from, 0), 42px, 0);
+    transition: opacity 0.8s var(--ease), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js [data-slide="left"] {
+    --slide-from: calc(var(--slide-distance) * -1);
+}
+
+html.js [data-slide="right"] {
+    --slide-from: var(--slide-distance);
+}
+
+html.js [data-slide].slide-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+html.js [data-scroll-words] .scroll-word {
+    display: inline-block;
+    opacity: var(--word-opacity, 0.15);
+    color: var(--clr-text);
+    color: color-mix(in srgb, var(--clr-text), var(--clr-accent) var(--word-highlight, 0%));
+    transform: translateY(var(--word-offset, 0.55em));
+    transition: opacity 0.08s linear, color 0.08s linear, transform 0.08s linear;
+    will-change: opacity, transform;
+}
+
+html.js [data-contact-reveal] .contact-fly-line {
+    display: block;
+    opacity: 0;
+    transform: translateX(-8vw);
+    transition: opacity 0.75s var(--ease), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js [data-contact-reveal] .contact-fly-line:nth-child(2) {
+    transform: translateX(8vw);
+    transition-delay: 180ms;
+}
+
+html.js [data-contact-reveal].contact-lines-visible .contact-fly-line {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 
@@ -483,6 +564,83 @@ p {
     color: var(--clr-accent);
 }
 
+.skills {
+    position: relative;
+    z-index: 1;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--clr-border), transparent);
+}
+
+.skills-groups {
+    border-top: 1px solid var(--clr-border);
+}
+
+.skill-group {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.7fr) 2fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.skill-group h3 {
+    color: var(--clr-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.skill-group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.skills-groups li {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-muted);
+    border: 1px solid var(--clr-border);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.035);
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.skills-groups li:hover {
+    color: var(--clr-text);
+    border-color: var(--clr-accent);
+    background: rgba(124, 106, 255, 0.1);
+}
+
+html.js [data-skill-reveal] li {
+    opacity: 0;
+    transform: translate3d(var(--skill-from, -64px), 28px, 0) scale(0.9);
+    transition: opacity 0.65s var(--ease), transform 0.75s var(--ease), border-color var(--transition), color var(--transition), background var(--transition);
+    transition-delay: var(--skill-delay, 0ms);
+    will-change: transform, opacity;
+}
+
+html.js [data-skill-reveal] li:nth-child(even) {
+    --skill-from: 64px;
+}
+
+html.js [data-skill-reveal].skills-revealed li {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
 /* Stats card */
 .about-card {
     position: sticky;
@@ -767,6 +925,44 @@ p {
     width: 100%;
 }
 
+html.js [data-contact-item] {
+    opacity: 0;
+    transition: opacity 0.75s var(--ease), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js [data-contact-item="left"] {
+    transform: translateX(-80px);
+}
+
+html.js [data-contact-item="right"] {
+    transform: translateX(80px);
+    transition-delay: 180ms;
+}
+
+html.js .contact-inner.contact-items-visible [data-contact-item] {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+html.js .contact-links.reveal a {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.65s var(--ease), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), color var(--transition);
+}
+
+html.js .contact-links.reveal.visible a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html.js .contact-links.reveal a:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+html.js .contact-links.reveal a:nth-child(3) {
+    transition-delay: 200ms;
+}
+
 
 /* ─────────────────────────────────────────────
    12. FOOTER
@@ -873,5 +1069,26 @@ p {
     .cursor,
     .cursor-follower {
         display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .text-letter-scatter,
+    html.js [data-scroll-words] .scroll-word {
+        transform: none !important;
+    }
+
+    html.js [data-scroll-words] .scroll-word {
+        opacity: 1 !important;
+        color: var(--clr-text) !important;
     }
 }

@@ -33,6 +33,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -44,8 +45,8 @@
   <section class="hero" id="hero">
     <div class="hero-inner">
       <p class="hero-greeting">Hello, I'm</p>
-      <h1 class="hero-name">Mahir <em>Khan</em></h1>
-      <p class="hero-tagline">Computer Science & Engineering Student, Science & Tech Enthusiast</p>
+      <h1 class="hero-name" data-text-reveal="letters">Mahir <em>Khan</em></h1>
+      <p class="hero-tagline" data-scroll-words>Computer Science & Engineering Student, Science & Tech Enthusiast</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-ghost">Let's Talk</a>
@@ -65,19 +66,19 @@
 
       <div class="about-grid">
         <div class="about-text reveal">
-          <h2 class="section-heading">Computer Science Engineering Student</h2>
-          <p>
+          <h2 class="section-heading" data-text-reveal data-slide="left">Computer Science Engineering Student</h2>
+          <p data-scroll-words>
             I'm a Computer Science & Engineering Student , from Rajasthan. I have experience
             in
             solving real-world problems using programming , science and technology.
             I have intermediate level experience in solving problems using data structures and algorithms.
           </p>
-          <p>
+          <p data-scroll-words>
             My vision is to solve problems
             that can be addressed using science and advanced technology.
 
           </p>
-          <p>
+          <p data-scroll-words>
             When I'm not writing code, you'll find me hiking in jungles and mountains,
             playing sports, listening music or doing some creative work.
 
@@ -121,7 +122,7 @@
     <div class="container">
 
       <div class="section-label reveal">Projects</div>
-      <h2 class="section-heading reveal">Recent <em>work</em></h2>
+      <h2 class="section-heading reveal" data-text-reveal data-slide="right">Recent <em>work</em></h2>
 
       <div class="projects-grid">
 
@@ -130,8 +131,8 @@
             <span class="project-number">01</span>
             <a href="#" aria-label="View project" class="icon-link">↗</a>
           </div>
-          <h3 class="project-title">Student Management System</h3>
-          <p class="project-desc">
+          <h3 class="project-title" data-scroll-words>Student Management System</h3>
+          <p class="project-desc" data-scroll-words>
             A real-time Student management system with data base integration
           </p>
           <ul class="project-tags">
@@ -148,8 +149,8 @@
             <span class="project-number">02</span>
             <a href="#" aria-label="View project" class="icon-link">↗</a>
           </div>
-          <h3 class="project-title">Railway Ticket Reservation System</h3>
-          <p class="project-desc">
+          <h3 class="project-title" data-scroll-words>Railway Ticket Reservation System</h3>
+          <p class="project-desc" data-scroll-words>
             Railway ticket reservation system with real-time seat availability and platform no.
           </p>
           <ul class="project-tags">
@@ -201,6 +202,28 @@
     </div>
   </section>
 
+  <!-- ═══════════ SKILLS ═══════════ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label reveal">Technical range</div>
+      <h2 class="section-heading" data-text-reveal data-slide="right">Tools I use to<br /><em>make things work.</em></h2>
+      <div class="skills-groups" data-skill-reveal>
+        <div class="skill-group">
+          <h3 data-scroll-words>Programming</h3>
+          <ul><li data-scroll-words>C &amp; C++</li><li data-scroll-words>Python</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3 data-scroll-words>Web development</h3>
+          <ul><li data-scroll-words>JavaScript</li><li data-scroll-words>React</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3 data-scroll-words>Data &amp; cloud</h3>
+          <ul><li data-scroll-words>MySQL</li><li data-scroll-words>AWS</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════ CONTACT ═══════════ -->
   <section class="section contact" id="contact">
     <div class="container">
@@ -208,9 +231,12 @@
       <div class="section-label reveal">Contact</div>
 
       <div class="contact-inner reveal">
-        <h2 class="section-heading contact-heading">Let's build<br />something <em>great</em>.</h2>
-        <p class="contact-sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
-        <a href="mailto:themahirk@gmail.com" class="btn btn-primary btn-large">Say Hello →</a>
+        <h2 class="section-heading contact-heading" data-contact-reveal aria-label="Let's build something great.">
+          <span class="contact-fly-line">Let's build</span>
+          <span class="contact-fly-line">something <em>great</em>.</span>
+        </h2>
+        <p class="contact-sub" data-contact-item="left" data-scroll-words>Have a project in mind or just want to say hi? My inbox is always open.</p>
+        <a href="mailto:themahirk@gmail.com" class="btn btn-primary btn-large" data-contact-item="right">Say Hello →</a>
       </div>
 
       <div class="contact-links reveal">
