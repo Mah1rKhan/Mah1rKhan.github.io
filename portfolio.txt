@@ -1,0 +1,69 @@
+# ============================================================================
+# PORTFOLIO CONTENT — SINGLE SOURCE OF TRUTH
+# ============================================================================
+# Update this file ONLY to add new skills, add new projects, or update links.
+# Lines starting with "#" are comments and are ignored by the website.
+#
+# HOW TO ADD NEW SKILLS:
+#   Add "- Skill Name" under an existing "## Group" or create a new "## Group".
+#
+# HOW TO ADD A NEW PROJECT:
+#   Copy a project block under [PROJECTS], separate it with "---", and fill in:
+#     Title: Project Name
+#     Description: Short summary of the project
+#     Tags: Tech 1, Tech 2, Tech 3
+#     Link: https://... (or # if not hosted yet, or "none" to hide arrow)
+#     Accent: true or false
+#
+# HOW TO UPDATE OR ADD LINKS:
+#   Edit or add "Label: https://..." lines under [LINKS].
+# ============================================================================
+
+[STATS]
+# Use a whole number (e.g. 4) or "auto" to count projects listed below
+Projects Count: 4
+Experience: < 1
+Availability: Available for project collaborations and Internship
+
+[SKILLS]
+## Programming
+- C & C++
+- Python
+
+## Web development
+- JavaScript
+- React
+
+## Data & cloud
+- MySQL
+- AWS
+
+# Optional: uncomment [ABOUT HIGHLIGHTS] only if you want the About section
+# skill pills to differ from the full [SKILLS] list above.
+# [ABOUT HIGHLIGHTS]
+# - C & C++
+# - Python
+# - JavaScript / React
+# - MySQL
+# - AWS
+
+[PROJECTS]
+Title: Student Management System
+Description: A real-time Student management system with data base integration
+Tags: Python, MySQL, JavaScript, HTML, CSS
+Link: #
+Accent: false
+
+---
+
+Title: Railway Ticket Reservation System
+Description: Railway ticket reservation system with real-time seat availability and platform no.
+Tags: Python, MySQL, JavaScript, HTML, CSS
+Link: #
+Accent: true
+
+[LINKS]
+Email: themahirk@gmail.com
+GitHub: https://github.com/Mah1rKhan
+LinkedIn: https://linkedin.com/in/TheMahirK
+Résumé: https://drive.google.com/file/d/1VpvsSJv1ljoOT11xrjZzAq0ANJDNSA3D/view

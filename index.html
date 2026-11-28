@@ -83,23 +83,17 @@
             playing sports, listening music or doing some creative work.
 
           </p>
-          <ul class="skills-list">
-            <li>C &amp; C++</li>
-            <li>Python</li>
-            <li>JavaScript / React</li>
-            <li>MySQL</li>
-            <li>AWS</li>
-          </ul>
+          <ul class="skills-list" id="about-skills" aria-live="polite"></ul>
         </div>
 
         <div class="about-card reveal reveal-delay">
           <div class="about-card-inner">
             <div class="stat">
-              <span class="stat-num" data-target="4">0</span>
+              <span class="stat-num" id="stat-projects" data-target="4">0</span>
               <span class="stat-label">Projects</span>
             </div>
             <div class="stat">
-              <span class="stat-num">&lt; 1</span>
+              <span class="stat-num" id="stat-experience">&lt; 1</span>
               <span class="stat-label">Years Experience</span>
             </div>
             <!-- <div class="stat">
@@ -107,8 +101,7 @@
               <span class="stat-label">Happy Clients</span>
             </div> -->
             <div class="about-availability">
-              <span class="avail-dot"></span> Available for project collaborations and Internship
-
+              <span class="avail-dot"></span> <span id="about-availability-text">Available for project collaborations and Internship</span>
             </div>
           </div>
         </div>
@@ -124,81 +117,8 @@
       <div class="section-label reveal">Projects</div>
       <h2 class="section-heading reveal" data-text-reveal data-slide="right">Recent <em>work</em></h2>
 
-      <div class="projects-grid">
-
-        <article class="project-card reveal">
-          <div class="project-card-header">
-            <span class="project-number">01</span>
-            <a href="#" aria-label="View project" class="icon-link">↗</a>
-          </div>
-          <h3 class="project-title" data-scroll-words>Student Management System</h3>
-          <p class="project-desc" data-scroll-words>
-            A real-time Student management system with data base integration
-          </p>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>MySQL</li>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </article>
-
-        <article class="project-card project-card--accent reveal">
-          <div class="project-card-header">
-            <span class="project-number">02</span>
-            <a href="#" aria-label="View project" class="icon-link">↗</a>
-          </div>
-          <h3 class="project-title" data-scroll-words>Railway Ticket Reservation System</h3>
-          <p class="project-desc" data-scroll-words>
-            Railway ticket reservation system with real-time seat availability and platform no.
-          </p>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>MySQL</li>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </article>
-
-        <!-- <article class="project-card reveal">
-          <div class="project-card-header">
-            <span class="project-number">03</span>
-            <a href="#" aria-label="View project" class="icon-link">↗</a>
-          </div>
-          <h3 class="project-title">Folio Finance</h3>
-          <p class="project-desc">
-            Personal finance tracker with AI-powered spend categorisation, budget forecasting,
-            and PDF report exports. Syncs with 3000+ banks via Plaid.
-          </p>
-          <ul class="project-tags">
-            <li>React Native</li>
-            <li>Python</li>
-            <li>Plaid API</li>
-            <li>AWS Lambda</li>
-          </ul>
-        </article> -->
-
-        <!-- <article class="project-card reveal">
-          <div class="project-card-header">
-            <span class="project-number">04</span>
-            <a href="#" aria-label="View project" class="icon-link">↗</a>
-          </div>
-          <h3 class="project-title">Pallet — Design System</h3>
-          <p class="project-desc">
-            Open-source React component library with 60+ accessible components, Storybook docs,
-            Figma kit, and automated visual regression tests.
-          </p>
-          <ul class="project-tags">
-            <li>React</li>
-            <li>Storybook</li>
-            <li>Figma</li>
-            <li>Chromatic</li>
-          </ul>
-        </article> -->
-
-      </div>
+      <!-- Populated dynamically from portfolio.txt -->
+      <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
     </div>
   </section>
 
@@ -207,20 +127,8 @@
     <div class="container">
       <div class="section-label reveal">Technical range</div>
       <h2 class="section-heading" data-text-reveal data-slide="right">Tools I use to<br /><em>make things work.</em></h2>
-      <div class="skills-groups" data-skill-reveal>
-        <div class="skill-group">
-          <h3 data-scroll-words>Programming</h3>
-          <ul><li data-scroll-words>C &amp; C++</li><li data-scroll-words>Python</li></ul>
-        </div>
-        <div class="skill-group">
-          <h3 data-scroll-words>Web development</h3>
-          <ul><li data-scroll-words>JavaScript</li><li data-scroll-words>React</li></ul>
-        </div>
-        <div class="skill-group">
-          <h3 data-scroll-words>Data &amp; cloud</h3>
-          <ul><li data-scroll-words>MySQL</li><li data-scroll-words>AWS</li></ul>
-        </div>
-      </div>
+      <!-- Populated dynamically from portfolio.txt -->
+      <div class="skills-groups" id="skills-groups" data-skill-reveal aria-live="polite"></div>
     </div>
   </section>
 
@@ -236,16 +144,11 @@
           <span class="contact-fly-line">something <em>great</em>.</span>
         </h2>
         <p class="contact-sub" data-contact-item="left" data-scroll-words>Have a project in mind or just want to say hi? My inbox is always open.</p>
-        <a href="mailto:themahirk@gmail.com" class="btn btn-primary btn-large" data-contact-item="right">Say Hello →</a>
+        <a href="mailto:themahirk@gmail.com" class="btn btn-primary btn-large" id="contact-email" data-contact-item="right">Say Hello →</a>
       </div>
 
-      <div class="contact-links reveal">
-        <a href="https://github.com/TheMahirKhan" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/TheMahirK" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-        <a href="https://drive.google.com/file/d/1VpvsSJv1ljoOT11xrjZzAq0ANJDNSA3D/view" target="_blank"
-          rel="noopener noreferrer">Résumé</a>
-      </div>
+      <!-- Populated dynamically from portfolio.txt -->
+      <div class="contact-links reveal" id="contact-links" aria-live="polite"></div>
 
     </div>
   </section>

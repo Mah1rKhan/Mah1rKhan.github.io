@@ -963,6 +963,22 @@ html.js .contact-links.reveal a:nth-child(3) {
     transition-delay: 200ms;
 }
 
+.portfolio-status {
+    grid-column: 1 / -1;
+    border: 1px solid var(--clr-border);
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    background: var(--clr-surface);
+    color: var(--clr-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.portfolio-status code {
+    color: var(--clr-accent);
+    font-family: var(--font-mono);
+}
+
 
 /* ─────────────────────────────────────────────
    12. FOOTER
